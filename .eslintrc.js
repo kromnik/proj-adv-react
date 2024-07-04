@@ -38,6 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'max-len': ['error', { ignoreComments: true }],
+    // 'eslint arrow-body-style': 'off',
   },
   globals: {
     __IS_DEV__: true,

@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from './types/config';
 
+// eslint-disable-next-line max-len
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HTMLWebpackPlugin({
@@ -20,7 +21,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
   ];
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     plugins.push(new webpack.HotModuleReplacementPlugin());
   }
 

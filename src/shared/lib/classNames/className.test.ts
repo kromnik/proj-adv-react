@@ -1,21 +1,21 @@
-import { classNames } from "./classNames";
+import { classNames } from './classNames';
 
-describe("className", () => {
+describe('className', () => {
   test('test with only first param', () => {
     expect(classNames('someClass')).toBe('someClass');
   })
   test('test with additional class', () => {
-    const expected = 'someClass class1 class2'
+    const expected = 'someClass class1 class2';
     expect(classNames('someClass', {}, ['class1', 'class2'])).toBe(expected);
-  })
+  });
   test('test with mods', () => {
-    const expected = 'someClass class1 class2 hovered scrollable'
+    const expected = 'someClass class1 class2 hovered scrollable';
     expect(classNames(
-      'someClass', 
-      {hovered: true, scrollable: true}, 
-      ['class1', 'class2'])
-    ).toBe(expected);
-  })
+      'someClass',
+      { hovered: true, scrollable: true },
+      ['class1', 'class2'],
+    )).toBe(expected);
+  });
   test('test with mods false', () => {
     const expected = 'someClass class1 class2 hovered'
     expect(classNames(
