@@ -7,5 +7,5 @@
   "stylelint.validate": [
     "css",
     "scss"
-  ]
+  ],
 }
