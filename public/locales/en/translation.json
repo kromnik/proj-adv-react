@@ -5,5 +5,8 @@
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Refresh the page",
   "throw Error": "throw error",
-  "Переключить": "Toggle"
+  "Переключить": "Toggle",
+  "Короткий язык": "En",
+  "Главная": "Main Page",
+  "О проекте": "About us"
 }
