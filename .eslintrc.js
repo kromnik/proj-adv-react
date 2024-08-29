@@ -37,7 +37,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'linebreak-style': 0,
+    'linebreak-style': 'off',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     // 'eslint arrow-body-style': 'off',
   },
