@@ -9,7 +9,6 @@ module.exports = {
     'airbnb',
   ],
   parser: '@typescript-eslint/parser',
-  overrides: [],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,7 +16,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -39,9 +38,22 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': 'off',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     // 'eslint arrow-body-style': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+        'max-len': 'off',
+      },
+    },
+  ],
 };
