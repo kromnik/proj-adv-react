@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useTheme } from 'app/providers/themeProvider';
+// import { useTheme } from 'app/providers/themeProvider';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -15,6 +15,7 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -25,11 +26,28 @@ export const Modal = (props: ModalProps) => {
     children,
     isOpen,
     onClose,
+    lazy,
   } = props;
 
+  const [isOpening, setIsOpening] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      timerRef.current = setTimeout(() => {
+        setIsOpening(true);
+      });
+    }
+    return () => {
+      setIsMounted(false);
+      setIsOpening(false);
+      clearTimeout(timerRef.current);
+    };
+  }, [isOpen]);
 
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -66,9 +84,13 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   const mods: Record<string, boolean> = {
-    [cls.opened]: isOpen,
+    [cls.opened]: isOpening,
     [cls.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
