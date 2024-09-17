@@ -10,6 +10,9 @@
   "Главная": "Main Page",
   "О проекте": "About us",
   "Войти": "Login",
+  "Выйти": "Log out",
   "Введите имя": "Enter name",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }
