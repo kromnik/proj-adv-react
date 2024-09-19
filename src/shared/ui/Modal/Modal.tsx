@@ -29,7 +29,7 @@ export const Modal = (props: ModalProps) => {
     lazy,
   } = props;
 
-  const [isOpening, setIsOpening] = useState(false);
+  // const [isOpening, setIsOpening] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -38,13 +38,13 @@ export const Modal = (props: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
-      timerRef.current = setTimeout(() => {
-        setIsOpening(true);
-      });
+      // timerRef.current = setTimeout(() => {
+      //   setIsOpening(true);
+      // });
     }
     return () => {
       setIsMounted(false);
-      setIsOpening(false);
+      // setIsOpening(false);
       clearTimeout(timerRef.current);
     };
   }, [isOpen]);
@@ -84,7 +84,7 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   const mods: Record<string, boolean> = {
-    [cls.opened]: isOpening,
+    [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
 
