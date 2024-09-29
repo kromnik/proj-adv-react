@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Roki",
+    "lastname": "Kiro",
+    "age": 49,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "SPb",
+    "username": "admin",
+    "avatar": "https://github.com/kromnik"
+  }
 }
