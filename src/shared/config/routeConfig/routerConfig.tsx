@@ -1,8 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
+
+type AppRoutesProps = RouteProps & {
+  authOnly?: boolean;
+}
 
 export enum AppRoutes {
   MAIN = 'main',
@@ -19,7 +24,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.NOT_FOUND]: '*',
 };
 
-export const routerConfig: RouteProps[] = [
+export const routerConfig: AppRoutesProps[] = [
   {
     path: RoutePath[AppRoutes.MAIN],
     element: <MainPage />,
@@ -31,6 +36,7 @@ export const routerConfig: RouteProps[] = [
   {
     path: RoutePath[AppRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
   },
   {
     path: RoutePath[AppRoutes.NOT_FOUND],

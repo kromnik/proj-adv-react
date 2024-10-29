@@ -15,5 +15,9 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
   "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Произошла ошибка при загрузке профиля": "Error loading your profile",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Укажите валюту": "Specify currency",
+  "Страна": "Country"
 }

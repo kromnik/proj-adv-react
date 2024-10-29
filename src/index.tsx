@@ -8,14 +8,14 @@ import 'app/styles/index.scss';
 import 'shared/config/i18n/i18';
 
 render(
+  <BrowserRouter>
     <StoreProvider>
-    <BrowserRouter>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
